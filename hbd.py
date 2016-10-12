@@ -1,0 +1,12 @@
+
+print ""
+print ""
+print "                               * *     * *"
+print "                             *     * *     *"
+print "                              *     *     *"
+print " ,o.            8 8             *       *"
+print "d   bzzzzzzzzzza8o8b              *   *"
+print " `o'                               * *"
+print "                                    *"
+print ""
+print ""
