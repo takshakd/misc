@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Happy birthday!</title>
+    <style>
+    body {
+        font-family: "Impact", "Charcoal", sans-serif;
+    }
+    .grp {
+        margin: 5px;
+        padding: 5px;
+    }
+    .question {
+        margin: 3px;
+    }
+    button {
+        background-color: #4CAF50;
+        border: none;
+        color: white;
+        padding: 5px 3px;
+        text-align: center;
+        display: inline-block;
+    }
+    #greeting {
+        padding: 10px;
+        font-size: 3em;
+        display: none;
+    }
+    </style>
+</head>
+<body>
+    <div>
+        <div class="grp">
+            <div class="question">
+                What's that programming language that sounds like you could gift a girl?
+            </div>
+            <input type="text" id="stage0"/>
+            <button onclick="proceed('perl', 0);">Click me!</button>
+        </div>
+
+        <div class="grp">
+            <div class="question">
+                When I need a 'Cuppa Joe' what's programming language should I use?
+            </div>
+            <input type="text" id="stage1" />
+            <button onclick="proceed('java', 1);">Click me!</button>
+        </div>
+
+        <div class="grp">
+            <div class="question">
+                Why on earth would someone name a programming language after a snake?! What's it called again?
+            </div>
+            <input type="text" id="stage2" />
+            <button onclick="proceed('python', 2);">Click me!</button>
+        </div>
+
+        <div>
+            <canvas id="canvas" width="150" height="150"></canvas>
+        </div>
+
+        <div id="greeting">
+            Happy birthday babe!
+        </div>
+    </div>
+
+    <script>
+    function draw(stage) {
+        var canvas = document.getElementById("canvas");
+        if (canvas.getContext) {
+            var ctx = canvas.getContext("2d");
+            ctx.fillStyle = '#FF0000';
+
+            if (stage >= 0) {
+                ctx.beginPath();
+                ctx.moveTo(75, 40);
+                ctx.bezierCurveTo(75,37,70,25,50,25);
+                ctx.bezierCurveTo(20,25,20,62.5,20,62.5);
+            }
+
+            if (stage > 0) {
+                ctx.bezierCurveTo(20,80,40,102,75,120);
+                ctx.bezierCurveTo(110,102,130,80,130,62.5);
+            }
+
+            if (stage > 1) {
+                ctx.bezierCurveTo(130,62.5,130,25,100,25);
+                ctx.bezierCurveTo(85,25,75,37,75,40);
+
+                document.getElementById("greeting").style.display = "block";
+            }
+            ctx.fill();
+        }
+    }
+
+    function proceed(answer, stage) {
+        var actual = document.getElementById("stage" + stage).value.toLowerCase();
+        if (answer == actual) {
+            draw(stage);
+        }
+    }
+    </script>
+</body>
+</html>
