@@ -13,9 +13,9 @@
         display: inline-block;
         padding: 10px;
         text-align: center;
-        transition: all 2s ease;
+        transition: all 0.5s ease;
     }
-    .drumKeyButton:hover {
+    .playing {
         transform: scale(1.2);
     }
     .drumKey {
@@ -33,6 +33,18 @@
         <div class="drumKey">A</div>
         <div class="sound">Clap</div>
     </div>
+
+    <script>
+    document.addEventListener("DOMContentLoaded", function() {
+        var drumKey = document.querySelector(".drumKeyButton");
+        drumKey.addEventListener("mouseover", function() {
+            drumKey.classList.add("playing");
+        });
+        drumKey.addEventListener("mouseout", function() {
+            drumKey.classList.remove("playing");
+        });
+    });
+    </script>
 </body>
 
 </html>
