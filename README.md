@@ -9,3 +9,7 @@
 [Stanford Tensorflow course](https://web.stanford.edu/class/cs20si/index.html)
 
 [Open source Scala books](http://underscore.io/books)
+
+[Teach Yourself Computer Science](https://teachyourselfcs.com)
+
+[Algorithms in JavaScript](https://github.com/trekhleb/javascript-algorithms)
